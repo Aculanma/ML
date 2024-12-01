@@ -70,7 +70,7 @@ async def root():
 
 # Делаем предсказание для одной машины и выводим целевую переменную -
 @app.post("/predict_item")
-def predict_item(item: Item):# -> float:
+def predict_item(item: Item) -> float:
     item = item.dict()
     item = pd.DataFrame(item, index=[0])
     processed_data = preprocess_data(item)
